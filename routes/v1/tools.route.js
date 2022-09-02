@@ -1,19 +1,12 @@
 const express = require('express');
+const toolsController = require('../../Controllar/tools.controller');
 const router = express.Router();
 
 router
 .route('/')
-.get((req, res) =>{
-    res.send('Test tools route get option');
-})
-.post((req, res) => {
-    res.send('tools added');
-})
-.delete( (req, res)=>{
-    res.send(' deleted data from  tools')
-})
-.put((req, res)=>{
-    res.send('put option added')
-});
+.get(toolsController.getAllTools)
+.post(toolsController.AddATools)
+.delete(toolsController.DeleteATools)
+.put(toolsController.PutATools);
 
 module.exports = router;
