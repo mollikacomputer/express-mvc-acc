@@ -1,13 +1,12 @@
-// const exports = require('express');
-// const userRouter = express.Router();
+const exportsForUser = require('express');
+const userController = require('../../Controllar/user.controller');
+const userRouter = exportsForUser.Router();
 
-// userRouter
-// .route('/')
-// .get((req, res) =>{
-//     res.send('user Route testing')
-// })
-// .delete((req, res) => {
-//     res.send('Delete user data testing')
-// });
+userRouter
+.route('/')
+.get(userController.getAllUser)
+.delete(userController.DeleteAUser)
+.put(userController.PutAUser)
+.post(userController.AddAUser)
 
-// module.exports = userRouter;
+module.exports = userRouter;
