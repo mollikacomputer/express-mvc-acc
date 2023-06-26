@@ -8,9 +8,13 @@ const tools = [
 
 module.exports.getAllUser = (req, res, next) =>{
     // write a query with url ?limit=10&page=3
-    const {limit, page} = req.query;
-    console.log(limit, page);
+    // const {limit, page} = req.query;
+    const {id, test} =req.params;
+    console.log(id, test);
+    // console.log(limit, page);
+    // res.send(tools.slice(0,limit));
     res.send(tools);
+
 }
 
 module.exports.AddAUser = (req, res, next) => {

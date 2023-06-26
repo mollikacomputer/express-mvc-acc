@@ -9,4 +9,7 @@ userRouter
 .put(userController.PutAUser)
 .post(userController.AddAUser)
 
+
+userRouter
+.route('/:id/:test').get(userController.getAllUser)
 module.exports = userRouter;

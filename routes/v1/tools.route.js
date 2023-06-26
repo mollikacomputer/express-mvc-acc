@@ -9,4 +9,6 @@ router
 .delete(toolsController.DeleteATools)
 .put(toolsController.PutATools);
 
+router.route('/:id/:test').get(toolsController.getAllTools);
+
 module.exports = router;
